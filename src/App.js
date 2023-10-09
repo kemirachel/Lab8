@@ -7,9 +7,9 @@ import Content from './components/Content';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import Read from './components/Read';
+import Create from './components/Create';
  
 
 function App() {
@@ -32,8 +32,8 @@ function App() {
       </Navbar>
 <Routes>
   <Route path='/' element={<Content></Content>}></Route>
-  <Route path='/read' element={<Header></Header>}></Route>
-  <Route path='/create' element={<Footer></Footer>}></Route>
+  <Route path='/read' element={<Read></Read>}></Route>
+  <Route path='/create' element={<Create></Create>}></Route>
 
 
 </Routes>
