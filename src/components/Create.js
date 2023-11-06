@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 {/*create application*/}
 
@@ -15,6 +16,16 @@ function Create(){
         console.log("Title "+title+
         "Cover: "+cover+
         "Author: "+author);
+
+{/*I added a post method on the Express Server that will console log both the title, cover abd author.*/}
+        const book = {
+            title:title,
+            cover:cover,
+            author:author,
+        };
+        axios.post('http://localhost:4000/api/books', book)
+        .then()
+        .catch();
 
     }
 
