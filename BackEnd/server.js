@@ -78,6 +78,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+
+
 {/*added api books here from lab 5 */}
 {/* Wrote a method that reads all data from the database and gets it to display on the react
 app*/}
@@ -88,9 +90,18 @@ app.get('/api/books', async (req, res)=>{
     res.json(books);
 
 })
+/* added in an put component to allow updates*/
+app.put('/api/book/:identifier' , async (req, res)=>{
+  console.log("Edit: " +req.params.identifier)
 
-{/*Write a method that reads a document/book by id from your database in your node/express
-server*/}
+  let book = await bookModel.findByIdAndUpdate(req.params.identifier,req.body,{new:true});
+  res.send(book);
+})
+
+/*Write a method that reads a document/book by id from your database in your node/express
+server*/
+
+
 
 app.get('/api/book/:id', async (req,res)=>{
   console.log(req.params.id);
